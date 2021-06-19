@@ -1,0 +1,59 @@
+@font-face{
+    font-family: persona;
+    src: url(media/fonts/Persona.ttf)
+}
+
+body{
+    background-image: url('./media/CitySkylineP5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: persona;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.space {
+    background-color: black;
+}
+
+/* COLUMN TESTS */
+
+.grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.cell {
+    height: 100px;
+    width: 100px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.red-token{
+    background-color: red;
+    background-image: url('./media/jokerRed.png');
+    background-size: contain;
+    border-radius: 50%;
+    height: 95px;
+    width: 95px;
+}
+
+.black-token{
+    background-color: white;
+    background-image: url('./media/jokerBlack.jpeg');
+    background-size: contain;
+    border-radius: 50%;
+    height: 95px;
+    width: 95px;
+}
