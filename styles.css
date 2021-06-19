@@ -17,12 +17,6 @@ body{
     align-items: center;
 }
 
-.space {
-    background-color: black;
-}
-
-/* COLUMN TESTS */
-
 .grid{
     display: flex;
     justify-content: center;
