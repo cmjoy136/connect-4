@@ -93,6 +93,25 @@ const switchPlayer = () => {
     }
   };
 
+  const resetGame = () => {
+    console.log("coming soon");
+    location.reload();
+  };
+
+  const winMessage = (player) => {
+    let backdrop = document.createElement('div')
+    let modal = document.createElement('div')
+    let restart = document.createElement('button')
+    backdrop.className = 'backdrop'
+    modal.className = 'win-modal'
+    modal.innerHTML = `Player ${player} wins!`
+    restart.innerHTML = 'Restart?'
+    restart.onclick = () => {resetGame()}
+    modal.appendChild(restart)
+    backdrop.appendChild(modal)
+    document.body.appendChild(backdrop)
+}
+
 const checkWins = () => {
   let b = boardArray;
   //verticalwin
@@ -105,9 +124,7 @@ const checkWins = () => {
         b[i + 2][j] === 1 &&
         b[i + 3][j] === 1
       ) {
-        setTimeout(() => {
-          alert("player 1 wins");
-        }, 300);
+        winMessage(1)
       } else if (
         b[i][j] !== null &&
         b[i][j] === 2 &&
@@ -115,9 +132,7 @@ const checkWins = () => {
         b[i + 2][j] === 2 &&
         b[i + 3][j] === 2
       ) {
-        setTimeout(() => {
-          alert(`player 2 wins`);
-        }, 300);
+       winMessage(2)
       }
     }
   }
@@ -131,9 +146,7 @@ const checkWins = () => {
         b[i][j + 2] === 1 &&
         b[i][j + 3] === 1
       ) {
-        setTimeout(() => {
-          alert("player 1 wins");
-        }, 300);
+        winMessage(1)
       } else if (
         b[i][j] !== null &&
         b[i][j] === 2 &&
@@ -141,9 +154,7 @@ const checkWins = () => {
         b[i][j + 2] === 2 &&
         b[i][j + 3] === 2
       ) {
-        setTimeout(() => {
-          alert("player 2 wins");
-        }, 300);
+       winMessage(2)
       }
     }
   }
@@ -157,9 +168,7 @@ const checkWins = () => {
         b[i + 2][j + 2] === 1 &&
         b[i + 3][j + 3] === 1
       ) {
-        setTimeout(() => {
-          alert("player 1 wins");
-        }, 300);
+        winMessage(1)
       } else if (
         b[i][j] !== null &&
         b[i][j] === 2 &&
@@ -167,9 +176,7 @@ const checkWins = () => {
         b[i + 2][j + 2] === 2 &&
         b[i + 3][j + 3] === 2
       ) {
-        setTimeout(() => {
-          alert("player 2 wins");
-        }, 300);
+        winMessage(2)
       }
     }
   }
@@ -184,9 +191,7 @@ const checkWins = () => {
         b[i - 2][j + 2] === 1 &&
         b[i - 3][j + 3] === 1
       ) {
-        setTimeout(() => {
-          alert("player 1 wins");
-        }, 300);
+       winMessage(1)
       } else if (
         b[i][j] !== null &&
         b[i][j] === 2 &&
@@ -194,9 +199,7 @@ const checkWins = () => {
         b[i - 2][j + 2] === 2 &&
         b[i - 3][j + 3] === 2
       ) {
-        setTimeout(() => {
-          alert("player 2 wins");
-        }, 300);
+     winMessage(2)
       }
     }
   }
@@ -222,11 +225,6 @@ const setClickForColumn = (cell) => {
   columns.forEach((column) => {
     column.addEventListener("click", dropToColumn);
   });
-};
-
-const resetGame = () => {
-  console.log("coming soon");
-  location.reload();
 };
 
 const loadContent = () => {
